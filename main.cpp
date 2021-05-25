@@ -3,24 +3,19 @@ using namespace std;
 
 int main()
 {
-    int x, y, min;
+    int x, y;
 
     cout << "Enter two numbers: ";
     cin >> x >> y;
-
-    // maximum value between n1 and n2 is stored in max
-    min = (x < y) ? x : y;
-
-    do
+    
+    while(x != y)
     {
-        if (min % x == 1 && min % y == 1)
-        {
-            cout << "HCF = " << min;
-            break;
-        }
+        if(x > y)
+            x -= y;
         else
-            --min;
-    } while (true);
+            x -= y;
+    }
 
+    cout << "HCF = " << x;
     return 0;
 }
